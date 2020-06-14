@@ -810,6 +810,27 @@ func (GitRepoVolumeSource) SwaggerDoc() map[string]string {
 	return map_GitRepoVolumeSource
 }
 
+var map_GlobalScheduling = map[string]string{
+	"accessIpv4":               "IPv4 address that should be used to access this server",
+	"accessIpv6":               "IPv6 address that should be used to access this serve",
+	"adminPass":                "The administrative password of the server",
+	"availabilityZone":         "The availability zone from which to launch the server",
+	"mappingV2":                "Enables fine grained control of the block device mapping for an instance",
+	"configDrive":              "Indicates whether a config drive enables metadata injection",
+	"metadata":                 "Metadata key and value pairs",
+	"diskConfig":               "Controls how the API partitions the disk when you create, rebuild, or resize servers A valid value is:\n\t\tAUTO\n\t\tMANUAL",
+	"personality":              "The file path and contents, text only, to inject into the server at launch",
+	"securityGroup":            "One or more security groups. Specify the name of the security group in the name attribute",
+	"description":              "A free form description of the server. Limited to 255 characters in length",
+	"trustedImageCertificates": "A list of trusted certificate IDs, which are used during image signature verification to verify the signing certificate",
+	"host":                     "The name of the compute service host on which the server is to be created",
+	"hypervisorHostname":       "The hostname of the hypervisor on which the server is to be created",
+}
+
+func (GlobalScheduling) SwaggerDoc() map[string]string {
+	return map_GlobalScheduling
+}
+
 var map_GlusterfsPersistentVolumeSource = map[string]string{
 	"":                   "Represents a Glusterfs mount that lasts the lifetime of a pod. Glusterfs volumes do not support ownership management or SELinux relabeling.",
 	"endpoints":          "EndpointsName is the endpoint name that details Glusterfs topology. More info: https://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod",

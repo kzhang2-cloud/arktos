@@ -2389,6 +2389,58 @@ type OpenStackSecurityGroup struct {
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 }
 
+type GlobalScheduling struct {
+	// IPv4 address that should be used to access this server
+	// +optional
+	AccessIpv4 string `json:"accessIpv4,omitempty" protobuf:"bytes,1,opt,name=accessIpv4"`
+	// IPv6 address that should be used to access this serve
+	// +ooptional
+	AccessIpv6 string `json:"accessIpv6,omitempty" protobuf:"bytes,2,opt,name=accessIpv6"`
+	// The administrative password of the server
+	// +optional
+	AdminPass string `json:"adminPass,omitempty" protobuf:"bytes,3,opt,name=adminPass"`
+	// The availability zone from which to launch the server
+	// +optional
+	AvailabilityZone string `json:"availabilityZone,omitempty" protobuf:"bytes,4,opt,name=availabilityZone"`
+	// Enables fine grained control of the block device mapping for an instance
+	// +optional
+	MappingV2 []BlockDeviceMappingV2 `json:"mappingV2,omitempty" protobuf:"bytes,5,rep,name=mappingV2"`
+	// Indicates whether a config drive enables metadata injection
+	// +optional
+	ConfigDrive bool `json:"configDrive,omitempty" protobuf:"varint,6,opt,name=configDrive"`
+	// Metadata key and value pairs
+	// +optional
+	Metadata map[string]string `json:"metadata,omitempty" protobuf:"bytes,7,opt,name=metadata"`
+	// Controls how the API partitions the disk when you create, rebuild, or resize servers
+	// A valid value is:
+	//		AUTO
+	// 		MANUAL
+	// +optional
+	DiskConfig string `json:"diskConfig,omitempty" protobuf:"bytes,8,opt,name=diskConfig"`
+	// The file path and contents, text only, to inject into the server at launch
+	// +optional
+	Personality []OpenStackPersonality `json:"personality,omitempty" protobuf:"bytes,9,rep,name=personality"`
+	// One or more security groups. Specify the name of the security group in the name attribute
+	// +optional
+	SecurityGroup []OpenStackSecurityGroup `json:"securityGroup,omitempty" protobuf:"bytes,10,rep,name=securityGroup"`
+	// A free form description of the server. Limited to 255 characters in length
+	// +optional
+	Description string `json:"description,omitempty" protobuf:"bytes,11,opt,name=description"`
+	// +optional
+	Tags []string `json:"tags,omitempty" protobuf:"bytes,12,rep,name=tags"`
+	// A list of trusted certificate IDs, which are used during image signature verification to verify the signing certificate
+	// +optional
+	TrustedImageCertificates []string `json:"trustedImageCertificates,omitempty" protobuf:"bytes,13,rep,name=trustedImageCertificates"`
+	// The name of the compute service host on which the server is to be created
+	// +optional
+	Host string `json:"host,omitempty" protobuf:"bytes,14,opt,name=host"`
+	// The hostname of the hypervisor on which the server is to be created
+	// +optional
+	HypervisorHostname string `json:"hypervisorHostname,omitempty" protobuf:"bytes,15,opt,name=hypervisorHostname"`
+
+	// scheduler_hints
+}
+
 // Virtual machine struct defines the information of a VM in the system
 type VirtualMachine struct {
 	// Name of the container specified as a DNS_LABEL.

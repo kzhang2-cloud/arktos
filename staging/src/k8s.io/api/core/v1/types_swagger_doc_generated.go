@@ -2512,6 +2512,7 @@ var map_VirtualMachine = map[string]string{
 	"powerSpec":               "default running",
 	"volumeDevices":           "volumeDevices is the list of block devices to be used by the container. This is a beta feature.",
 	"cloudInitUserDataScript": "cloud-init user data script",
+	"globalScheduling":        "Global Scheduling",
 }
 
 func (VirtualMachine) SwaggerDoc() map[string]string {

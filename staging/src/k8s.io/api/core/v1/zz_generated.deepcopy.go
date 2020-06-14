@@ -6022,6 +6022,7 @@ func (in *VirtualMachine) DeepCopyInto(out *VirtualMachine) {
 		*out = make([]VolumeDevice, len(*in))
 		copy(*out, *in)
 	}
+	in.GlobalScheduling.DeepCopyInto(&out.GlobalScheduling)
 	return
 }
 

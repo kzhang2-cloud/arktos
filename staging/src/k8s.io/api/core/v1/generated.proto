@@ -5187,6 +5187,10 @@ message VirtualMachine {
   // cloud-init user data script
   // +optional
   optional string cloudInitUserDataScript = 14;
+
+  // Global Scheduling
+  // +optioanl
+  optional GlobalScheduling globalScheduling = 17;
 }
 
 // VirtualMachineStatus holds the details of the current status of a given virtual machine instance

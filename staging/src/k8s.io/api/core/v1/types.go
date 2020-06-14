@@ -2506,6 +2506,9 @@ type VirtualMachine struct {
 	// cloud-init user data script
 	// +optional
 	CloudInitUserDataScript string `json:"cloudInitUserDataScript,omitempty" protobuf:"bytes,14,opt,name=cloudInitUserDataScript"`
+	// Global Scheduling
+	// +optioanl
+	GlobalScheduling GlobalScheduling `json:"globalScheduling,omitempty" protobuf:"bytes,17,opt,name=globalScheduling"`
 }
 
 // Handler defines a specific action that should be taken

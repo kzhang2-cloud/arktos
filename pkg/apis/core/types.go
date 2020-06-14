@@ -2303,6 +2303,9 @@ type VirtualMachine struct {
 	// cloud-init user data script
 	// +optional
 	CloudInitUserDataScript string
+	// Global Scheduling
+	// +optioanl
+	GlobalScheduling GlobalScheduling
 }
 
 // Handler defines a specific action that should be taken

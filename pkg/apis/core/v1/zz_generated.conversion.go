@@ -4917,6 +4917,7 @@ func autoConvert_v1_Nic_To_core_Nic(in *v1.Nic, out *core.Nic, s conversion.Scop
 	out.IpAddress = in.IpAddress
 	out.Tag = in.Tag
 	out.Ipv6Enabled = in.Ipv6Enabled
+	out.Uuid = in.Uuid
 	return nil
 }
 
@@ -4932,6 +4933,7 @@ func autoConvert_core_Nic_To_v1_Nic(in *core.Nic, out *v1.Nic, s conversion.Scop
 	out.IpAddress = in.IpAddress
 	out.Tag = in.Tag
 	out.Ipv6Enabled = in.Ipv6Enabled
+	out.Uuid = in.Uuid
 	return nil
 }
 
@@ -7152,6 +7154,7 @@ func Convert_core_ResourceQuotaStatus_To_v1_ResourceQuotaStatus(in *core.Resourc
 func autoConvert_v1_ResourceRequirements_To_core_ResourceRequirements(in *v1.ResourceRequirements, out *core.ResourceRequirements, s conversion.Scope) error {
 	out.Limits = *(*core.ResourceList)(unsafe.Pointer(&in.Limits))
 	out.Requests = *(*core.ResourceList)(unsafe.Pointer(&in.Requests))
+	out.FlavorRef = in.FlavorRef
 	return nil
 }
 
@@ -7163,6 +7166,7 @@ func Convert_v1_ResourceRequirements_To_core_ResourceRequirements(in *v1.Resourc
 func autoConvert_core_ResourceRequirements_To_v1_ResourceRequirements(in *core.ResourceRequirements, out *v1.ResourceRequirements, s conversion.Scope) error {
 	out.Limits = *(*v1.ResourceList)(unsafe.Pointer(&in.Limits))
 	out.Requests = *(*v1.ResourceList)(unsafe.Pointer(&in.Requests))
+	out.FlavorRef = in.FlavorRef
 	return nil
 }
 

@@ -2093,6 +2093,11 @@ message Nic {
   // default to false
   // +optional
   optional bool ipv6Enabled = 6;
+
+  // To provision the server instance with a NIC for a network, specify the UUID of the network in the uuid attribute in a networks object
+  // Required if omit the port attribute
+  // +optional
+  optional string uuid = 7;
 }
 
 // Node is a worker node in Kubernetes.
@@ -4081,6 +4086,10 @@ message ResourceRequirements {
   // More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   // +optional
   map<string, k8s.io.apimachinery.pkg.api.resource.Quantity> requests = 2;
+
+  // Integrate with OpenStack flavorRef
+  // +optional
+  optional string flavorRef = 3;
 }
 
 message RestoreAction {

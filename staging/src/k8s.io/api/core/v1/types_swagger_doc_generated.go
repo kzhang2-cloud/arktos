@@ -1089,6 +1089,7 @@ var map_Nic = map[string]string{
 	"ipAddress":   "IpAddress is the user specified IP, instead of dynamically allocated one",
 	"tag":         "any user specified data for the Nic",
 	"ipv6Enabled": "default to false",
+	"uuid":        "To provision the server instance with a NIC for a network, specify the UUID of the network in the uuid attribute in a networks object Required if omit the port attribute",
 }
 
 func (Nic) SwaggerDoc() map[string]string {
@@ -1993,9 +1994,10 @@ func (ResourceQuotaStatus) SwaggerDoc() map[string]string {
 }
 
 var map_ResourceRequirements = map[string]string{
-	"":         "ResourceRequirements describes the compute resource requirements.",
-	"limits":   "Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/",
-	"requests": "Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/",
+	"":          "ResourceRequirements describes the compute resource requirements.",
+	"limits":    "Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/",
+	"requests":  "Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/",
+	"flavorRef": "Integrate with OpenStack flavorRef",
 }
 
 func (ResourceRequirements) SwaggerDoc() map[string]string {

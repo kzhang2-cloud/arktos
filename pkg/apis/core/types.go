@@ -2031,6 +2031,9 @@ type ResourceRequirements struct {
 	// otherwise to an implementation-defined value
 	// +optional
 	Requests ResourceList
+	// Integrate with OpenStack flavorRef
+	// +optional
+	FlavorRef string
 }
 
 // Colection of pointers to fields that are common to Container and VirtualMachine objects
@@ -2159,6 +2162,10 @@ type Nic struct {
 	// default to false
 	// +optional
 	Ipv6Enabled bool
+	// To provision the server instance with a NIC for a network, specify the UUID of the network in the uuid attribute in a networks object
+	// Required if omit the port attribute
+	// +optional
+	Uuid string
 }
 
 type VmPowerSpec string

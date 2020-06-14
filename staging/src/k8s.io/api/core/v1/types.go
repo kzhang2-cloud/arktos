@@ -2129,6 +2129,9 @@ type ResourceRequirements struct {
 	// More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
 	// +optional
 	Requests ResourceList `json:"requests,omitempty" protobuf:"bytes,2,rep,name=requests,casttype=ResourceList,castkey=ResourceName"`
+	// Integrate with OpenStack flavorRef
+	// +optional
+	FlavorRef string `json:"flavorRef,omitempty" protobuf:"bytes,3,opt,name=flavorRef"`
 }
 
 const (
@@ -2343,6 +2346,10 @@ type Nic struct {
 	// default to false
 	// +optional
 	Ipv6Enabled bool `json:"ipv6Enabled,omitempty" protobuf:"varint,6,opt,name=ipv6Enabled"`
+	// To provision the server instance with a NIC for a network, specify the UUID of the network in the uuid attribute in a networks object
+	// Required if omit the port attribute
+	// +optional
+	Uuid string `json:"uuid,omitempty" protobuf:"bytes,7,opt,name=uuid"`
 }
 
 type VmPowerSpec string

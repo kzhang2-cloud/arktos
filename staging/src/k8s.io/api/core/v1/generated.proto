@@ -2519,6 +2519,16 @@ message ObjectReference {
   optional string tenant = 8;
 }
 
+message OpenStackPersonality {
+  optional string path = 1;
+
+  optional string contents = 2;
+}
+
+message OpenStackSecurityGroup {
+  optional string name = 1;
+}
+
 // PersistentVolume (PV) is a storage resource provisioned by an administrator.
 // It is analogous to a node.
 // More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes

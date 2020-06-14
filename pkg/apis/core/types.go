@@ -2196,6 +2196,15 @@ type BlockDeviceMappingV2 struct {
 	VolumeType          string
 }
 
+type OpenStackPersonality struct {
+	Path     string
+	Contents string
+}
+
+type OpenStackSecurityGroup struct {
+	Name string
+}
+
 // Virtual machine struct defines the information of a VM in the system
 type VirtualMachine struct {
 	// Required. Name of the container specified as a DNS_LABEL.

@@ -2380,6 +2380,15 @@ type BlockDeviceMappingV2 struct {
 	VolumeType          string `json:"volumeType,omitempty" protobuf:"bytes,13,opt,name=volumeType"`
 }
 
+type OpenStackPersonality struct {
+	Path     string `json:"path,omitempty" protobuf:"bytes,1,opt,name=path"`
+	Contents string `json:"contents,omitempty" protobuf:"bytes,2,opt,name=contents"`
+}
+
+type OpenStackSecurityGroup struct {
+	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+}
+
 // Virtual machine struct defines the information of a VM in the system
 type VirtualMachine struct {
 	// Name of the container specified as a DNS_LABEL.

@@ -2178,6 +2178,24 @@ const (
 	VmPowerSpecSuspended VmPowerSpec = "suspended"
 )
 
+// Enables fine grained control of the block device mapping for an instance
+// This is typically used for booting servers from volumes
+type BlockDeviceMappingV2 struct {
+	BootIndex           int64
+	DeleteOnTermination bool
+	DestinationType     string
+	DeviceName          string
+	DeviceType          string
+	DiskBus             string
+	GuestFormat         string
+	NoDevice            bool
+	SourceType          string
+	Uuid                string
+	VolumeSize          int64
+	Tag                 string
+	VolumeType          string
+}
+
 // Virtual machine struct defines the information of a VM in the system
 type VirtualMachine struct {
 	// Required. Name of the container specified as a DNS_LABEL.

@@ -136,6 +136,14 @@ func (Binding) SwaggerDoc() map[string]string {
 	return map_Binding
 }
 
+var map_BlockDeviceMappingV2 = map[string]string{
+	"": "Enables fine grained control of the block device mapping for an instance This is typically used for booting servers from volumes",
+}
+
+func (BlockDeviceMappingV2) SwaggerDoc() map[string]string {
+	return map_BlockDeviceMappingV2
+}
+
 var map_CSIPersistentVolumeSource = map[string]string{
 	"":                           "Represents storage that is managed by an external CSI volume driver (Beta feature)",
 	"driver":                     "Driver is the name of the driver to use for this volume. Required.",

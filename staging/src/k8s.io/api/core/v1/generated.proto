@@ -222,6 +222,36 @@ message Binding {
   optional ObjectReference target = 2;
 }
 
+// Enables fine grained control of the block device mapping for an instance
+// This is typically used for booting servers from volumes
+message BlockDeviceMappingV2 {
+  optional int64 bootIndex = 1;
+
+  optional bool deleteOnTermination = 2;
+
+  optional string destinationType = 3;
+
+  optional string deviceName = 4;
+
+  optional string deviceType = 5;
+
+  optional string diskBus = 6;
+
+  optional string guestFormat = 7;
+
+  optional bool noDevice = 8;
+
+  optional string sourceType = 9;
+
+  optional string uuid = 10;
+
+  optional int64 volumeSize = 11;
+
+  optional string tag = 12;
+
+  optional string volumeType = 13;
+}
+
 // Represents storage that is managed by an external CSI volume driver (Beta feature)
 message CSIPersistentVolumeSource {
   // Driver is the name of the driver to use for this volume.

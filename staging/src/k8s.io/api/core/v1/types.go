@@ -2362,6 +2362,24 @@ const (
 	VmPowerSpecSuspended VmPowerSpec = "Suspended"
 )
 
+// Enables fine grained control of the block device mapping for an instance
+// This is typically used for booting servers from volumes
+type BlockDeviceMappingV2 struct {
+	BootIndex           int64  `json:"bootIndex,omitempty" protobuf:"varint,1,opt,name=bootIndex"`
+	DeleteOnTermination bool   `json:"deleteOnTermination,omitempty" protobuf:"varint,2,opt,name=deleteOnTermination"`
+	DestinationType     string `json:"destinationType,omitempty" protobuf:"bytes,3,opt,name=destinationType"`
+	DeviceName          string `json:"deviceName,omitempty" protobuf:"bytes,4,opt,name=deviceName"`
+	DeviceType          string `json:"deviceType,omitempty" protobuf:"bytes,5,opt,name=deviceType"`
+	DiskBus             string `json:"diskBus,omitempty" protobuf:"bytes,6,opt,name=diskBus"`
+	GuestFormat         string `json:"guestFormat,omitempty" protobuf:"bytes,7,opt,name=guestFormat"`
+	NoDevice            bool   `json:"noDevice,omitempty" protobuf:"varint,8,opt,name=noDevice"`
+	SourceType          string `json:"sourceType,omitempty" protobuf:"bytes,9,opt,name=sourceType"`
+	Uuid                string `json:"uuid,omitempty" protobuf:"bytes,10,opt,name=uuid"`
+	VolumeSize          int64  `json:"volumeSize,omitempty" protobuf:"varint,11,opt,name=volumeSize"`
+	Tag                 string `json:"tag,omitempty" protobuf:"bytes,12,opt,name=tag"`
+	VolumeType          string `json:"volumeType,omitempty" protobuf:"bytes,13,opt,name=volumeType"`
+}
+
 // Virtual machine struct defines the information of a VM in the system
 type VirtualMachine struct {
 	// Name of the container specified as a DNS_LABEL.
